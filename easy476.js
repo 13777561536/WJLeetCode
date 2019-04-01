@@ -12,5 +12,13 @@ $(function(){
         })
         return parseInt(result,2);
     };
+    // 打call 以5来举例 5 => 101 2 => 010 其实就是 101和111进行按位异或(^)
+    var nbFn = function(num) {
+        var temp = ~0;
+        while (temp & num) {
+            temp <<= 1;
+        }
+        return ~temp ^ num;
+    };
     $(".easy476").text("easy476:  "+findComplement(5));
 })
