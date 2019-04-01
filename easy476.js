@@ -14,9 +14,9 @@ $(function(){
     };
     // 打call 以5来举例 5 => 101 2 => 010 其实就是 101和111进行按位异或(^)
     var nbFn = function(num) {
-        var temp = ~0;
+        var temp = ~0; // -1
         while (temp & num) {
-            temp <<= 1;
+            temp <<= 1; // -2 -4 -8
         }
         return ~temp ^ num;
     };
